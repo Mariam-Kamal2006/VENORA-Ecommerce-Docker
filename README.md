@@ -4,52 +4,45 @@ A luxury e-commerce web application for jewelry and watches, developed using mod
 
 ## About The Project
 
-VENORA is an online shopping platform designed to provide an elegant shopping experience for luxury jewelry and watches.
+*VENORA* is an online shopping platform designed to provide an elegant shopping experience for luxury jewelry and watches.
 
-The project includes a frontend interface, a PHP backend, and a MySQL database. Docker and Docker Compose are used to containerize and manage the application services.
+The project includes a frontend interface, a PHP backend, and a MySQL database. Docker and Docker Compose are used to containerize and manage the application services seamlessly.
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript
-- PHP 8.2
-- MySQL 8.0
-- Docker
-- Docker Compose
-- Nginx
-- Apache
+* *Frontend:* HTML5, CSS3, JavaScript, Nginx
+* *Backend:* PHP 8.2, Apache
+* *Database:* MySQL 8.0
+* *DevOps & Containerization:* Docker, Docker Compose
 
 ## Features
 
-- User Registration and Login
-- Product Collections
-- Product Browsing
-- Shopping Cart
-- Order Management
-- MySQL Database Integration
-- Containerized Application Services
+* User Registration and Login
+* Product Collections & Browsing
+* Shopping Cart & Order Management
+* MySQL Database Integration
+* Fully Containerized Multi-Service Architecture
 
 ## Docker Architecture
 
 The application consists of three main services:
 
-1. **Frontend:** Nginx container serving the website.
-2. **Backend:** PHP 8.2 with Apache handling application logic and API requests.
-3. **Database:** MySQL 8.0 storing application data.
+1. *Frontend:* Nginx container serving the static website and assets.
+2. *Backend:* PHP 8.2 with Apache handling application logic and API requests.
+3. *Database:* MySQL 8.0 storing persistent application data.
 
 ### Docker Concepts Implemented
 
-- Separate Dockerfiles for application services.
-- Docker Compose for multi-container orchestration.
-- Named Volumes for persistent database storage.
-- Bind Mounts for sharing project files with containers.
-- Container networking for communication between services.
-- Database Healthcheck for service readiness.
+* Separate Dockerfile configurations for application services.
+* Docker Compose for multi-container orchestration.
+* Named Volumes for persistent database storage.
+* Bind Mounts for sharing project files with containers.
+* Custom container networking for internal communication between services.
+* Database Healthcheck to ensure service readiness before backend startup.
 
 ## Project Structure
 
-```text
+text
 VENORA-Ecommerce-Docker/
 │
 ├── frontend/
@@ -68,78 +61,44 @@ VENORA-Ecommerce-Docker/
 │   └── init.sql
 │
 ├── docker-compose.yml
-├── .env.example
-├── .gitignore
 └── README.md
-```
 
-## Getting Started
+Getting Started
+Prerequisites
+ * Docker Desktop
+ * Git
+Installation
+ * Clone the repository:
+   git clone [https://github.com/Mariam-Kamal2006/VENORA-Ecommerce-Docker.git](https://github.com/Mariam-Kamal2006/VENORA-Ecommerce-Docker.git)
 
-### Prerequisites
+ * Navigate to the project directory:
+   cd VENORA-Ecommerce-Docker
 
-- Docker Desktop
-- Git
+ * Create a .env file in the root directory and configure your environment variables (matching the variables defined in docker-compose.yml), for example:
+   MYSQL_ROOT_PASSWORD=your_root_password
+MYSQL_DATABASE=venora_db
+MYSQL_USER=venora_user
+MYSQL_PASSWORD=your_password
 
-### Installation
+ * Build and start all services:
+   docker compose up --build -d
 
-1. Clone the repository:
+ * Open the application in your browser:
+   http://localhost:8081
 
-```bash
-git clone YOUR_REPOSITORY_URL
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd VENORA-Ecommerce-Docker
-```
-
-3. Create your environment file:
-
-On Windows PowerShell:
-
-```powershell
-Copy-Item .env.example .env
-```
-
-4. Open `.env` and configure your database credentials.
-
-5. Build and start all services:
-
-```bash
-docker compose up --build -d
-```
-
-6. Open the application:
-
-```text
-http://localhost:8080
-```
-
-### Stop the Application
-
-```bash
+Stop the Application
 docker compose down
-```
 
-## Database Persistence
-
+Database Persistence
 Docker Named Volumes are used to preserve MySQL data even when containers are stopped or recreated.
-
-**Note:** Removing the named volume will delete the stored database data.
-
-## Future Improvements
-
-- Online Payment Integration
-- Product Search and Filtering
-- Admin Dashboard
-- Improved Security
-- Enhanced User Experience
-
-## Author
-
-Developed as an e-commerce and Docker learning project.
-
----
-
-**VENORA – Elegance in Every Detail.**
+> Note: Running docker compose down -v will remove the named volume and delete the stored database data.
+> 
+Future Improvements
+ * Online Payment Integration
+ * Advanced Product Search and Filtering
+ * Admin Dashboard
+ * Enhanced Security & Authentication
+ * Improved User Experience
+Author
+Developed by Mariam Kamal as a full-stack e-commerce and Docker containerization project.
+VENORA – Elegance in Every Detail.
